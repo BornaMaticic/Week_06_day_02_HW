@@ -16,3 +16,37 @@ describe('Park', function() {
     dinosaur4 = new Dinosaur('triceratops', 'carnivore', 15);
     dinosaur5 = new Dinosaur('stegasaurus', 'herbivore', 20);
   })
+
+  it('should have a name', function () {
+    const actual = testPark.name;
+    const expected = parkName;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('should have a ticket price', function () {
+    const actual = testPark.price;
+    const expected = parkPrice;
+    assert.strictEqual(actual, expected);
+  });
+
+  it('should have a collection of dinosaurs', function () {
+    const actual = testPark.dinosaurs;
+    const expected = [];
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to add a dinosaur to its collection',    function () {
+    testPark.addDinosaur(dinosaur1);
+    const actual = testPark.dinosaurs;
+    const expected = [dinosaur1];
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to remove a dinosaur from its collection', function () {
+    testPark.addDinosaur(dinosaur1);
+    testPark.addDinosaur(dinosaur2);
+    testPark.removeDinosaur(dinosaur1);
+    const actual = testPark.dinosaurs;
+    const expected = [dinosaur2];
+    assert.deepStrictEqual(actual, expected);
+  });
