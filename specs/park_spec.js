@@ -50,3 +50,14 @@ describe('Park', function() {
     const expected = [dinosaur2];
     assert.deepStrictEqual(actual, expected);
   });
+
+  it('should be able to find the dinosaur that attracts the most visitors', function () {
+    testPark.addDinosaur(dinosaur1);
+    testPark.addDinosaur(dinosaur2);
+    testPark.addDinosaur(dinosaur3);
+    const actual = testPark.findMostPopularDinosaur();
+    const expected = dinosaur1;
+    assert.strictEqual(actual, expected);
+  });
+
+  
