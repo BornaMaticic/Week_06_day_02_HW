@@ -73,4 +73,17 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, expected);
     assert.deepStrictEqual(actual2, expected2);
   });
+
+  describe('Park Revenue', function () {
+    it ('calculate the number of visitors per day', function () {
+      testPark.addDinosaur(dinosaur1);
+      testPark.addDinosaur(dinosaur2);
+      testPark.addDinosaur(dinosaur3);
+      testPark.addDinosaur(dinosaur4);
+      testPark.addDinosaur(dinosaur5);
+      const actual = testPark.numberOfVisitorsPerDay ();
+      const expected = 110;
+      assert.strictEqual(actual, expected);
+    });
+  });
 });
