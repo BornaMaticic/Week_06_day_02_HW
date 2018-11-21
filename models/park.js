@@ -25,6 +25,16 @@ Park.prototype.findMostPopularDinosaur = function () {
   return mostPopular;
 };
 
+Park.prototype.findAllDinosaurBySpecies = function (species) {
+  let foundDinosaurs = [];
+  for (dinosaur of this.dinosaurs) {
+    if (dinosaur.species === species) {
+      foundDinosaurs.push(dinosaur);
+    }
+  }
+  return foundDinosaurs;
+};
+
 
 
 module.exports = Park;

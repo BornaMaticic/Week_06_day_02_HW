@@ -60,4 +60,17 @@ describe('Park', function() {
     assert.strictEqual(actual, expected);
   });
 
-  
+  it('should be able to find all dinosaurs of a particular species', function () {
+    testPark.addDinosaur(dinosaur1);
+    testPark.addDinosaur(dinosaur2);
+    testPark.addDinosaur(dinosaur3);
+    testPark.addDinosaur(dinosaur4);
+    testPark.addDinosaur(dinosaur5);
+    const actual = testPark.findAllDinosaurBySpecies('t-rex');
+    const expected = [dinosaur1];
+    const actual2 = testPark.findAllDinosaurBySpecies('velociraptor');
+    const expected2 = [dinosaur2];
+    assert.deepStrictEqual(actual, expected);
+    assert.deepStrictEqual(actual2, expected2);
+  });
+});
